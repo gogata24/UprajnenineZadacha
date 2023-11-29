@@ -1,0 +1,46 @@
+﻿@model IEnumerable<UprajnenineZadacha.Models.User>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h3>Email</h3>
+            </th>
+            <th>
+                <h3>Username</h3>
+            </th>
+            <th>
+               <h3>Password</h3>
+            </th>
+            <th>
+                <h3>Phone</h3>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var user in Model) {
+        <tr>
+            <td>
+                <h7>@user.Email</h7>
+            </td>
+            <td>
+                    <h7>@user.Username</h7>
+            </td>
+            <td>
+                    <h7>@user.Password</h7>
+            </td>
+            <td>
+                    <h7>@user.Phone</h7>
+            </td>
+            <td>
+                <a asp-controller="User" asp-action="Edit" asp-route-id="@user.Id">Edit</a> 
+                <a asp-controller="User" asp-action="Delete" asp-route-id="@user.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
